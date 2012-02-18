@@ -1,0 +1,173 @@
+@CHARSET "ISO-8859-1";
+
+body{
+margin: 0;
+padding: 0;
+border: 0;
+overflow: hidden;
+height: 100%; 
+max-height: 100%;
+font-size: 14px;
+color: #181B20;
+
+}
+
+#framecontent{
+position: absolute; 
+top: 0; 
+left: 0; 
+width: 100%; 
+height: 150px; /*Height of frame div*/
+overflow: hidden; /*Disable scrollbars. Set to "scroll" to enable*/
+background:url('../img/header.png')repeat-x left top;
+color: white;
+}
+
+
+#maincontent{
+position: fixed; 
+top: 150px; /*Set top value to HeightOfFrameDiv*/
+left: 0;
+right: 0;
+bottom: 0;
+overflow: auto; 
+background:#fff;
+}
+
+.innertube{
+margin: 40px; /*Margins for inner DIV inside each DIV (to provide padding)*/
+}
+
+
+
+
+#footer
+{
+	width:100%;
+	height:20px;
+	background:url('../img/footer.png')repeat-x left top;
+	padding:20px;
+	color
+}
+#footer p {
+	margin: 0;
+	line-height: normal;
+	text-align: center;
+	font-family: 'Homenaje', sans-serif;
+	text-shadow:0 0 1px transparent;
+	color:#fff;
+}
+
+
+
+h1, h2, h3 {
+	margin: 0;
+	padding: 0;
+	text-transform: uppercase;
+	font-family: 'Homenaje', sans-serif;
+	font-weight: normal;
+	text-shadow:0 0 1px transparent;
+	color: #2483A6;
+}
+
+
+
+h1 {
+	font-size: 2em;
+}
+
+h2 {
+	font-size: 2.4em;
+}
+
+h3 {
+	font-size: 1.6em;
+}
+
+p, ul, ol {
+	margin-top: 0;
+	line-height: 180%;
+}
+
+ul, ol {
+}
+
+a {
+	text-decoration: none;
+	color: #2483A6;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+
+#logo h1, #logo p {
+	display: block;
+	margin: 0;
+	padding: 0;
+}
+
+#logo h1 {
+	margin: 0px;
+	letter-spacing: -1px;
+	text-align: center;
+	text-transform: uppercase;
+	font-size: 54px;
+	font-weight: bold;
+	font-family: 'Homenaje', sans-serif;
+	color: #FFFFFF;
+}
+
+#logo h1 a {
+	color: #FFFFFF;
+}
+
+#logo p {
+	margin-top: -10px;
+	text-align: center;
+	text-transform: uppercase;
+	font-family: 'Homenaje', sans-serif;
+	font-size: 20px;
+	color:#0F67A1;
+}
+
+#homeBox{
+	
+	width:800px;
+	background:#fff;
+	margin:40px auto;
+	
+}
+
+#homeBox table
+{
+	
+}
+
+#homeBox td
+{
+	padding:20px;
+	background: #eee;
+	border: 1px solid #fff;
+	-moz-box-shadow: 0px 2px 15px #333;
+	-moz-border-radius:10px;
+}
+
+
+
+#homeBox a:hover {
+-webkit-transform: scale(1.25);
+-moz-transform: scale(1.25);
+position: relative;
+z-index: 5;
+}
+
+* html body{ /*IE6 hack*/
+padding: 130px 0 0 0; /*Set value to (HeightOfFrameDiv 0 0 0)*/
+}
+
+* html #maincontent{ /*IE6 hack*/
+height: 100%; 
+width: 100%; 
+}
