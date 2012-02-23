@@ -2,7 +2,7 @@
 
 /*
 * Author Christopher Valerio
-*
+* License GPL 3
 */
 
 /*** activa los errores ***/
