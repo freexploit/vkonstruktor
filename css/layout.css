@@ -72,15 +72,15 @@ h1, h2, h3 {
 
 
 h1 {
-	font-size: 2em;
+	font-size: 1.5em;
 }
 
 h2 {
-	font-size: 2.4em;
+	font-size: 2.0em;
 }
 
 h3 {
-	font-size: 1.6em;
+	font-size: 1.2em;
 }
 
 p, ul, ol {
@@ -139,20 +139,6 @@ a:hover {
 	
 }
 
-#homeBox table
-{
-	
-}
-
-#homeBox td
-{
-	padding:20px;
-	background: #eee;
-	border: 1px solid #fff;
-	-moz-box-shadow: 0px 2px 15px #333;
-	-moz-border-radius:10px;
-}
-
 /*
 
 #homeBox a:hover {
@@ -180,6 +166,7 @@ ul.table a
 {
   margin:10px;
   font-family: 'Homenaje', sans-serif;
+  font-size:10px;
 
 }
 
