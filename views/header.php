@@ -10,8 +10,9 @@
 
 <script type="text/javascript" src="js/jquery.min.js"></script>
 <script type="text/javascript" src="js/jquery-ui.js"></script>
+<script type="text/javascript" src="js/global.js"></script>
 <script type="text/javascript" src="js/validarut.js"></script>
-<script type="text/javascript" src="js/<?php echo $jsfile; ?>"></script>
+<script type="text/javascript" src="js/<?php echo $jsfile ?>"></script>
 <script type="text/javascript">
 
 </script>
@@ -22,6 +23,14 @@
       <div id="logo">
       <h1><a href="/vkonstruktor">VYV CONTROL SYSTEM</a></h1>
       <p>construyendo lo que sigue</p>
+      <ul id="menu">
+      <li>
+      	<a href="/vkonstruktor" class="button medium blue">Inicio</a>
+	<a href="<?php echo $controllers[0]?>" class="button medium blue">Contabilidad</a>
+      </li>
+      <li></li>
+      <li></li>
+      </ul>
       </div>
      </div>
 </div>

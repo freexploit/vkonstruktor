@@ -101,6 +101,28 @@ Class Router
    
    }
 
+   public function get_controllers()
+
+   {
+      $dir=$this->path;
+      
+      $files=scandir($dir);
+
+      foreach($files as $value)
+      {
+         if($value !='.' && $value !='..' && $value!="indexController.php" )
+	 {
+	    $controllers[]=substr($value,0,-14);
+	 }
+      }
+
+      return $controllers;
+
+
+   }
+
+
+
 
 
 }//fin clase Router

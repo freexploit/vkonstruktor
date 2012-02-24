@@ -35,7 +35,7 @@ background:#fff;
 }
 
 .innertube{
-margin: 40px; /*Margins for inner DIV inside each DIV (to provide padding)*/
+margin: 20px; /*Margins for inner DIV inside each DIV (to provide padding)*/
 }
 
 
@@ -133,10 +133,38 @@ a:hover {
 
 #homeBox{
 	
-	width:900px;
+	width:88%;
 	background:#fff;
-	margin:40px auto;
+	margin:0 auto;
 	
+}
+
+div.cont table 
+{
+   margin:0 auto;
+
+}
+div.cont table 
+{
+   border-collapse: collapse; 
+}
+
+div.cont table td, div.cont table th
+{
+   border:1px solid #fff;
+   solid:#eee;
+   padding:5px;;
+   text-align:left;
+
+}
+div.respuesta
+{
+}
+div.clean
+{
+   clear:both;
+   padding-top:20px;
+   height:1px;
 }
 
 /*
@@ -176,7 +204,13 @@ ul.table img
    display:block;
 }
 
+ul#menu
+{
+   margin:0;
+   padding-left:400px;
+   display:none;
 
+}
 
 .button, .button:visited 
 {
@@ -247,17 +281,5 @@ height: 100%;
 width: 100%; 
 }
 
-input
-{
-   display:block;
 
-}
 
-input.text {
-   margin-bottom:12px;
-   margin-top:12px;
-   width:95%;
-   padding: .4em; 
-}
-fieldset { padding:0; border:0; margin:15px; ;display:inline;}
-fieldset h3 {margin:10px;}
