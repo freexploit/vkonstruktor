@@ -21,12 +21,12 @@
 <div id="framecontent">
    <div class="innertube">
       <div id="logo">
-      <h1><a href="/vkonstruktor">VYV CONTROL SYSTEM</a></h1>
+      <h1><a href="">VYV CONTROL SYSTEM</a></h1>
       <p>construyendo lo que sigue</p>
       <ul id="menu">
       <li>
-      	<a href="/vkonstruktor" class="button medium blue">Inicio</a>
-	<a href="<?php echo $controllers[0]?>" class="button medium blue">Contabilidad</a>
+      	<a href="" class="button medium blue">Inicio</a>
+	<a href="/contabilidad" class="button medium blue">Contabilidad</a>
       </li>
       <li></li>
       <li></li>

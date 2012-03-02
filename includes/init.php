@@ -1,19 +1,22 @@
 <?php
 
-/* include the controller class */
+/* incluye la clase controller_base */
 
 include __SITE_PATH.'/application/'.'controller_base.class.php';
 
-/* include the registry class */
+/* incluye la clase registry */
 include __SITE_PATH.'/application/'.'registry.class.php';
 
-/* include the router class */
+/* incluye la clase router */
 
 include __SITE_PATH.'/application/'.'router.class.php';
 
-/* include the template class */ 
+/* incluye la clase template */ 
 
 include __SITE_PATH.'/application/'.'template.class.php';
+
+/* incluye clase model */
+include __SITE_PATH.'/application/'.'model.class.php';
 
 
 /** recarga automaticamente  la clases del modelo */

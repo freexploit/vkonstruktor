@@ -11,10 +11,12 @@ Class Router
    public $file;
    public $controller;
    public $action;
+   private $cfg;
 
-   function __construct($registry)
+   function __construct($registry,$cfg)
    {
       $this->registry=$registry;
+      $this->cfg=$cfg;
    }
 
    function setPath($path)
@@ -73,7 +75,7 @@ Class Router
 
       if(empty($route))
       {
-         $route='index';
+         $route=$this->cfg["router"];
       }
       else
       {
@@ -89,7 +91,7 @@ Class Router
 
       if (empty($this->controller))
       {
-         $this->controller='index';
+         $this->controller=$this->cfg['router'];
       }
 
       if (empty($this->action))
@@ -101,7 +103,7 @@ Class Router
    
    }
 
-   public function get_controllers()
+   public function getControllers()
 
    {
       $dir=$this->path;
@@ -110,7 +112,7 @@ Class Router
 
       foreach($files as $value)
       {
-         if($value !='.' && $value !='..' && $value!="indexController.php" )
+         if($value !='.' && $value !='..' && $value!=$this->cfg['router']."Controller.php" )
 	 {
 	    $controllers[]=substr($value,0,-14);
 	 }

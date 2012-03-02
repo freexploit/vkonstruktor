@@ -25,17 +25,21 @@
 	echo "<li>";
 	for($i=0;$i<$c;$i++)
 	{
+	    $li++;
 	    echo "<a href='".$controllers[$i]."' class='button large blue' title='".$controllers[$i]."'><img src='".$icons[$i]."'/></a>";
-	    
-	    if($li>3)
+	    if ($c<2 || $li>2 || $i==$c)
 	    {
-	       echo "</li><li>";
+	         echo "</li>";
+	    }
+	    
+	    if ($li > 2)
+	    {
 	       $li=0;
 	    }
-	    $li++;
 
 	 
 	}
+	
 
 
     ?>

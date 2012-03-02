@@ -51,7 +51,7 @@
                         </td>
                         <td>
                             <input type="text" name="rutProveedor" id="rutProveedor"> 
-			    <button id="sp">Buscar</butto/n>
+			    <button id="sp">Buscar</button>
                         </td>
                     </tr>
                     <tr>
@@ -123,7 +123,7 @@
                     
                     <tr>
                         <td>
-                            <input type="text" name="numDocumento" id="numDocumento">
+                            <input type="text" name="numDocu" id="numDocu">
 
                         </td>
                         <td>
@@ -162,12 +162,12 @@
                         <td>                        
                         </td>
                         <td>
-                            <button id="guardar">Guardar</button>
-
+                           
                         </td>
                     </tr>
                     </form> 
-                    
+                    <button id="guardar">Guardar</button>
+ 
                 </table>
 		 
 
