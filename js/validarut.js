@@ -2,112 +2,119 @@
 // Validador de Rut
 // Descargado desde http://www.juque.cl/
 //
+// Modificado por Christopher Valerio para definirse como objeto
+(
+function (window,undefine,idObject)
+{
+     //variables de sistema
+     var document=window.document,
+         navigator=window.navigator,
+	 location=window.location;
+    // var domObject=$(idObject);	 
+    var private = 
+	   {
+	       revisarDigito:  function ( dvr )
+                {	
+	           dv = dvr + ""	
+	           if ( dv != '0' && dv != '1' && dv != '2' && dv != '3' && dv != '4' && dv != '5' && dv != '6' && dv != '7' && dv != '8' && dv != '9' && dv != 'k'  && dv != 'K')	
+                   {		
+		       alert("Debe ingresar un digito verificador valido");		
+		       return false;	
+                   }	
+	          return true;
+               },
 
-var frut=$("#rut_proveedor");
-function revisarDigito( dvr )
-{	
-	dv = dvr + ""	
-	if ( dv != '0' && dv != '1' && dv != '2' && dv != '3' && dv != '4' && dv != '5' && dv != '6' && dv != '7' && dv != '8' && dv != '9' && dv != 'k'  && dv != 'K')	
-	{		
-		alert("Debe ingresar un digito verificador valido");		
-		frut.focus();		
-		frut.select();		
-		return false;	
-	}	
-	return true;
-}
+	       revisarDigito2: function ( crut )
+               {	
+                	largo = crut.length;	
+	                if ( largo < 2 )	
+	                {		
+		              alert("Debe ingresar el rut completo")		
+		              return false;	
+                      	}	
+	                if ( largo > 2 )		
+		             rut = crut.substring(0, largo - 1);	
+                 	else		
+		             rut = crut.charAt(0);	
+	                dv = crut.charAt(largo-1);	
+	                this.revisarDigito( dv );	
 
-function revisarDigito2( crut )
-{	
-	largo = crut.length;	
-	if ( largo < 2 )	
-	{		
-		alert("Debe ingresar el rut completo")		
-		frut.focus();		
-		frut.select();		
-		return false;	
-	}	
-	if ( largo > 2 )		
-		rut = crut.substring(0, largo - 1);	
-	else		
-		rut = crut.charAt(0);	
-	dv = crut.charAt(largo-1);	
-	revisarDigito( dv );	
+	                if ( rut == null || dv == null )
+	                	return 0	
 
-	if ( rut == null || dv == null )
-		return 0	
+	               var dvr = '0'	
+	               suma = 0	
+	               mul  = 2	
 
-	var dvr = '0'	
-	suma = 0	
-	mul  = 2	
+	               for (i= rut.length -1 ; i >= 0; i--)	
+	               {	
+		           suma = suma + rut.charAt(i) * mul		
+		           if (mul == 7)			
+			       mul = 2		
+		           else    			
+			       mul++	
+                      }	
+               	      res = suma % 11	
+	              if (res==1)		
+		          dvr = 'k'	
+                      else if (res==0)		
+		          dvr = '0'	
+	              else	
+	              {		
+		          dvi = 11-res		
+		          dvr = dvi + ""	
+	              }
+	              if ( dvr != dv.toLowerCase() )	
+	              {		
+		           alert("EL rut es incorrecto")		
+		           return false;	
+	              }
 
-	for (i= rut.length -1 ; i >= 0; i--)	
-	{	
-		suma = suma + rut.charAt(i) * mul		
-		if (mul == 7)			
-			mul = 2		
-		else    			
-			mul++	
-	}	
-	res = suma % 11	
-	if (res==1)		
-		dvr = 'k'	
-	else if (res==0)		
-		dvr = '0'	
-	else	
-	{		
-		dvi = 11-res		
-		dvr = dvi + ""	
-	}
-	if ( dvr != dv.toLowerCase() )	
-	{		
-		alert("EL rut es incorrecto")		
-		frut.focus();		
-		frut.select();		
-		return false	
-	}
+	              return true
+                }
+	   
+	   }
 
-	return true
-}
 
-function Rut(texto)
-{	
-	var tmpstr = "";	
-	for ( i=0; i < texto.length ; i++ )		
-		if ( texto.charAt(i) != ' ' && texto.charAt(i) != '.' && texto.charAt(i) != '-' )
-			tmpstr = tmpstr + texto.charAt(i);	
-	texto = tmpstr;	
-	largo = texto.length;	
 
-	if ( largo < 2 )	
-	{		
-		alert("Debe ingresar el rut completo")		
-		frut.focus();		
-		frut.select();		
-		return false;	
-	}	
+     var Rut = (function ()
+         {
+	   
+           var core ={
+	      validaRut: function (texto)
+	      {
+	          var tmpstr = "";	
+	          for ( i=0; i < texto.length ; i++ )		
+		       if ( texto.charAt(i) != ' ' && texto.charAt(i) != '.' && texto.charAt(i) != '-' )
+		         	tmpstr = tmpstr + texto.charAt(i);	
+	                        texto = tmpstr;	
+                         	largo = texto.length;	
 
-	for (i=0; i < largo ; i++ )	
-	{			
-		if ( texto.charAt(i) !="0" && texto.charAt(i) != "1" && texto.charAt(i) !="2" && texto.charAt(i) != "3" && texto.charAt(i) != "4" && texto.charAt(i) !="5" && texto.charAt(i) != "6" && texto.charAt(i) != "7" && texto.charAt(i) !="8" && texto.charAt(i) != "9" && texto.charAt(i) !="k" && texto.charAt(i) != "K" )
- 		{			
-			alert("El valor ingresado no corresponde a un R.U.T valido");			
-			frut.focus();			
-			frut.select();			
-			return false;		
-		}	
-	}	
+	               if ( largo < 2 )	
+	               {		
+		            alert("Debe ingresar el rut completo")		
+		            return false;	
+	               }	
 
-	var invertido = "";	
-	for ( i=(largo-1),j=0; i>=0; i--,j++ )		
-		invertido = invertido + texto.charAt(i);	
-	var dtexto = "";	
-	dtexto = dtexto + invertido.charAt(0);	
-	dtexto = dtexto + '-';	
-	cnt = 0;	
+	         for (i=0; i < largo ; i++ )	
+	         {			
+		      if ( texto.charAt(i) !="0" && texto.charAt(i) != "1" && texto.charAt(i) !="2" && texto.charAt(i) != "3" && texto.charAt(i) != "4" && texto.charAt(i) !="5" && texto.charAt(i) != "6" && texto.charAt(i) != "7" && texto.charAt(i) !="8" && texto.charAt(i) != "9" && texto.charAt(i) !="k" && texto.charAt(i) != "K" )
+ 	              {			
+		        	alert("El valor ingresado no corresponde a un R.U.T valido");			
+			        return false;		
+		      }	
+            	}	
 
-	for ( i=1,j=2; i<largo; i++,j++ )	
-	{		
+	       var invertido = "";	
+	       for ( i=(largo-1),j=0; i>=0; i--,j++ )		
+	         	invertido = invertido + texto.charAt(i);	
+	       var dtexto = "";	
+	       dtexto = dtexto + invertido.charAt(0);	
+ 	       dtexto = dtexto + '-';	
+               cnt = 0;	
+
+	       for ( i=1,j=2; i<largo; i++,j++ )	
+              {		
 		//alert("i=[" + i + "] j=[" + j +"]" );		
 		if ( cnt == 3 )		
 		{			
@@ -121,16 +128,32 @@ function Rut(texto)
 			dtexto = dtexto + invertido.charAt(i);			
 			cnt++;		
 		}	
-	}	
+	     }	
 
-	invertido = "";	
-	for ( i=(dtexto.length-1),j=0; i>=0; i--,j++ )		
+	     invertido = "";	
+	     for ( i=(dtexto.length-1),j=0; i>=0; i--,j++ )		
 		invertido = invertido + dtexto.charAt(i);	
 
-	frut.value = invertido.toUpperCase()		
 
-	if ( revisarDigito2(texto) )		
-		return true;	
+	     if ( private.revisarDigito2(texto) )		
+	        	return true;	
 
-	return false;
+	     return false;
+	           
+	      }
+	   }
+	   
+
+	   return Rut;
+	 
+	 })();       
+     
+     window.Rut = Rut;
+
 }
+
+)(window);
+
+
+
+

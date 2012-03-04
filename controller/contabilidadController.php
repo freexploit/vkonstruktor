@@ -31,8 +31,8 @@ Class contabilidadController Extends baseController {
 
 	   $sql="select num_documento from compras where num_documento='$numDocumento'";
 
-	   $query= $this->registry->db->query($sql);
-	   while($row=$query->fetch_array)
+	   $result= $this->registry->db->query($sql);
+	   while($row=$result->fetch_array)
 	   {
 	      $documento=$row[0];
 	   }
