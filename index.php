@@ -2,8 +2,10 @@
 
 /*
 * Author Christopher Valerio
-* License GPL 3
+* License GPL 3.0
+*
 */
+
 
 /* define el directorio raiz */
 $site_path=realpath(dirname(__FILE__));
