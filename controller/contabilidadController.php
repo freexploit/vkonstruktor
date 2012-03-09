@@ -11,7 +11,7 @@ Class contabilidadController Extends baseController {
 
    public function guardar_compras () 
    { 
-      if (isset($_POST))
+      if (!empty($_POST))
       {
            $fechaIngreso = $_POST['fechaIngreso'];
            $fechaDocu = $_POST['fechaDocu'];
