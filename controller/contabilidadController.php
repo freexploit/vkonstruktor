@@ -4,7 +4,6 @@ Class contabilidadController Extends baseController {
 
    public function index() {
       $this->registry->template->title="Modulo de Contabilidad";
-      $this->registry->template->jsfile="conta.js";
       $this->registry->template->show('contabilidad');
 
    } 
@@ -16,7 +15,7 @@ Class contabilidadController Extends baseController {
            $fechaIngreso = $_POST['fechaIngreso'];
            $fechaDocu = $_POST['fechaDocu'];
            $valorNeto = $_POST['valorNeto'];
-           $tipoDocumento = $_POST['tipoDocu'];
+           $tipoDocumento = $_POST['tipoDocumento'];
            $numDocumento = $_POST['numDocu'];
            $credito = $_POST['credito'];
            $rutProveedor = $_POST['rutProveedor'];
@@ -31,12 +30,8 @@ Class contabilidadController Extends baseController {
 
 	   $sql="select num_documento from compras where num_documento='$numDocumento'";
 
-	   $result= $this->registry->db->query($sql);
-	   while($row=$result->fetch_array)
-	   {
-	      $documento=$row[0];
-	   }
-	   if($documento != "")
+	   $this->registry->result= $this->registry->db->query($sql);
+	   if($this->registry->db->affected_rows >= 1)
 	   {
 	       echo "Error: Esta factura ya ha sido agregada";
 	   }

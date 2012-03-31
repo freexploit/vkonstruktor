@@ -1,4 +1,4 @@
-$(
+$(document).ready(
 function (){
    
    meses=['Enero','Febrero','Marzo','Abril','Mayo','Junio','Julio','Agosto','Septiembre','Octubre','Noviembre','Diciembre'];
@@ -6,8 +6,6 @@ function (){
    diasMin=['Do','Lu','Ma','Mi','Ju','Vi','Sa'];
    url="http://127.0.0.1/vkonstruktor"
    
-   $("#tabs").tabs();
-   $("#sp").button();
    $("#fechaDocu").datepicker(
    {
       monthNames:meses,
@@ -23,9 +21,9 @@ function (){
    }
    );
 
-   $("#guardar").button().click(
+   $("#guardarCompras").click(
       function(){
-       $.post(url+"/contabilidad/guardar_compras",$("#compras form").serialize(), function(res) { alert(res) } ) 
+       $.post(url+"/contabilidad/guardar_compras",$("#compras").serialize(), function(res) { alert(res) } ) 
        }
    );
 

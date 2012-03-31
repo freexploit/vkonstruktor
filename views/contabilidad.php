@@ -1,23 +1,13 @@
 <?php include ('header.php'); ?>
-<div id="maincontent">
-   <div class="innertube">
-   <div id="homeBox">
 
    <!-- inician los tab -->
-       <div id="tabs">
-           <ul>
-	      <li><a href="#compras">Compras</a></li>
-	      <li><a href="#ventas">Ventas</a></li>
-	   </ul>
-
-           <div id="compras">
-	     <div class="cont" class="ui-widget">
-	       <h1>Ingreso Facturas de Proveedores</h1>
+<div class="container well ">
+	       <legend>Ingreso Facturas de Proveedores</legend>
 	        <br />
 		 
-                <table class="ui-widget ui-widget-content">
-                   <form>
-                    <tr class="ui-widget-header">
+                <table >
+                   <form id="compras">
+                    <tr >
                         <th>
                             Datos Generales
                         </th>
@@ -43,12 +33,12 @@
                     </tr>
                     <tr>
                         <td>
-                            <input disabled type="text" name="fechaIngreso" id="fechaIngreso" value="<?php echo date('d-m-Y'); ?>">
+                            <input  type="text" name="fechaIngreso" id="fechaIngreso" value="<?php echo date('d-m-Y'); ?>">
                         </td>
                         <td>
 
                             <input type="text" name="valorNeto" id="valorNeto">
-                        </td>
+                        /</td>
                         <td>
                             <input type="text" name="rutProveedor" id="rutProveedor"> 
 			    <button id="sp">Buscar</button>
@@ -76,7 +66,7 @@
                             <input type="text" name="iva" id="iva">
                         </td>
                         <td>
-                            <input disabled type="text" name="nomProveedor" id="nomProveedor" /> 
+                            <input  type="text" name="nomProveedor" id="nomProveedor" /> 
                         </td>
                     </tr>
                     <tr>
@@ -94,7 +84,7 @@
                     <tr>
 
                         <td>
-                            <select id="tipoDocu">
+                            <select id="tipoDocu" name="tipoDocumento">
                                 <option value="Factura">Factura</option>
                                 <option value="Guia">Guia</option>
                                 <option value="Guia de Tercero">Guia de Tercero</option>
@@ -105,7 +95,7 @@
                             <input type="text" name="montoTotal" id="montoTotal">
                         </td>
                         <td>
-                            <input disabled type="text" name="direccion" id="direccion"> 
+                            <input  type="text" name="direccion" id="direccion"> 
                         </td>
                     </tr>
                     <tr>
@@ -127,17 +117,10 @@
 
                         </td>
                         <td>
-                            <select name="credito" id="credito">
-                                <option value="0">En efectivo</option>
-                                <option value="15">15 dias</option>
-                                <option value="30">30 dias</option>
-                                <option value="60">60 dias</option>
-
-                                <option value="90">90 dias</option>
-                            </select>                            
+                                                        
                         </td>
                         <td>
-                            <input disabled  type="text" name="giro" id="giro"> 
+                            <input   type="text" name="giro" id="giro"> 
                         </td>
                     </tr>
                     <tr>
@@ -153,7 +136,7 @@
                     </tr>
                     <tr>
                         <td>
-                            <select id="obra">
+                            <select id="obra" name="obra">
 
                                 <option value="1">Clinica Alemana</option>
                                 <option value="2">Casino Dreams</option>
@@ -166,25 +149,13 @@
                         </td>
                     </tr>
                     </form> 
-                    <button id="guardar">Guardar</button>
+                    <button id="guardarCompras" class="btn btn-primary">Guardar</button>
  
                 </table>
 		 
 
-		   
-	     </div>
-	     
-	   </div>
-	   <div class="respuesta"></div>
+	</div>	   
 
-           <div id="ventas">Chao</div>
-	   <div class="clean"></div>
-       </div>
-       <!-- fin tabs -->
-
-   </div>
-
- </div>
 
 
 

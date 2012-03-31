@@ -1,36 +1,34 @@
-<!DOCTYPE ">
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<meta charset="utf-8">
 <title><?php echo $title ?></title>
 
-<link rel="stylesheet" href="css/layout.css" type="text/css" media="screen" />
-<link href='http://fonts.googleapis.com/css?family=Homenaje' rel='stylesheet' type='text/css'>
-<link rel="stylesheet" href="css/start/jquery-ui.css" type="text/css" media="screen" />
 
-<script type="text/javascript" src="js/jquery.min.js"></script>
-<script type="text/javascript" src="js/jquery-ui.js"></script>
-<script type="text/javascript" src="js/global.js"></script>
-<script type="text/javascript" src="js/validarut.js"></script>
-<script type="text/javascript" src="js/<?php echo $jsfile ?>"></script>
-<script type="text/javascript">
+<link href="css/bootstrap.css" rel="stylesheet">
+<style>
+   body {
+   padding-top: 60px; /* 60px to make the container go all the way to the bottom of the topbar */
+      }
+    </style>
+<link href="css/bootstrap-responsive.css" rel="stylesheet">
+<link href="css/smoothness/jquery-ui.css" rel="stylesheet"  />
+<link href="css/layout.css" rel="stylesheet"  />
 
-</script>
 </head>
 <body>
-<div id="framecontent">
-   <div class="innertube">
-      <div id="logo">
-      <h1><a href="">VYV CONTROL SYSTEM</a></h1>
-      <p>construyendo lo que sigue</p>
-      <ul id="menu">
-      <li>
-      	<a href="" class="button medium blue">Inicio</a>
-	<a href="/contabilidad" class="button medium blue">Contabilidad</a>
-      </li>
-      <li></li>
-      <li></li>
-      </ul>
+<div class="navbar navbar-fixed-top">
+      <div class="navbar-inner">
+        <div class="container-fluid">
+          <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+          </a>
+          <a class="brand" href="#">Vkonstruktor</a>
+          <div class="nav-collapse">
+            <ul class="nav">
+              <li class="active"><a href="contabilidad">Modulo Contable</a></li>
+              <li><a href="#about">Lista marcadores</a></li>
+            </ul>
+          </div><!--/.nav-collapse -->
+        </div>
       </div>
-     </div>
-</div>
+    </div>
